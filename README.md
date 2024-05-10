@@ -86,3 +86,36 @@ Indented code
             }
         }
         console.log(twoD);
+
+# 5) Rotate by 90 deg in antiClockwise direction.
+
+## Code
+
+Inline `code`
+
+Indented code
+
+    let twoD = [[1,2,3],[3,4,5],[4,5,6]];
+    
+    for(let i=0;i<twoD.length;i++){
+        for(let j=0;j<=i;j++){
+            if(i===j) continue;
+            else{
+                let temp = twoD[i][j];
+            
+                twoD[i][j] = twoD[j][i];
+         
+                twoD[j][i] = temp;
+         
+            }
+        }
+    }
+    
+    for(let i=0;i<Math.floor(twoD.length/2);i++){
+        for(let j=0;j<twoD.length;j++){
+            let temp = twoD[i][j];
+            twoD[i][j] = twoD[twoD.length-1-i][j];
+            twoD[twoD.length-1-i][j] = temp;
+        }
+    }
+    console.log(twoD);
